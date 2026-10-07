@@ -1,5 +1,5 @@
 //
-// app.config.ts — __HEADER_NAME__
+// app.config.ts — carrasco-leo
 // ~/projects/app-client/src/app
 //
 

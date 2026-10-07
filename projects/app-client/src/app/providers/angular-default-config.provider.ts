@@ -1,5 +1,5 @@
 //
-// angular-default-config.provider.ts — __HEADER_NAME__
+// angular-default-config.provider.ts — carrasco-leo
 // ~/projects/app-client/src/app/providers
 //
 

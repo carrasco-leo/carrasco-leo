@@ -1,5 +1,5 @@
 //
-// material-default-config.provider.ts — __HEADER_NAME__
+// material-default-config.provider.ts — carrasco-leo
 // ~/projects/app-client/src/app/providers
 //
 

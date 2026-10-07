@@ -1,5 +1,5 @@
 //
-// app-auth.provider.ts — __HEADER_NAME__
+// app-auth.provider.ts — carrasco-leo
 // ~/projects/app-client/src/app/providers
 //
 

@@ -1,5 +1,5 @@
 //
-// main.ts — __HEADER_NAME__
+// main.ts — carrasco-leo
 // ~/projects/app-client/src
 //
 

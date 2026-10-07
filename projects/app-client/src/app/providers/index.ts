@@ -1,5 +1,5 @@
 //
-// index.ts — __HEADER_NAME__
+// index.ts — carrasco-leo
 // ~/projects/app-client/src/app/providers
 //
 
