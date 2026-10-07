@@ -1,0 +1,39 @@
+//
+// styles.scss — __HEADER_NAME__
+// ~/projects/app-client/src
+//
+
+@use 'sass:color';
+
+@use '@angular/material' as mat;
+
+:root {
+	color-scheme: light dark;
+
+	--text-color: light-dark(#212529, #e6e6e8);
+	--text-color-secondary: light-dark(#6c757d, #cccdd1);
+	--text-disabled: light-dark(#0000004d, #ffffff4d);
+	--surface-section: light-dark(#efefef, #111827);
+	--surface-card: light-dark(white, #1f2937);
+	--surface-card-darker: #{color.adjust(#1f2937, $lightness: -4%)};
+	--surface-card-lighter: #{color.adjust(#1f2937, $lightness: 4%)};
+	--surface-overlay: light-dark(white, #1f2937);
+	--surface-border: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
+	--surface-hover: light-dark(rgba(0, 0, 0, 0.03), rgba(255, 255, 255, 0.03));
+	--content-padding: 1.25rem;
+	--inline-spacing: 0.5rem;
+	--highlight-bg: rgba(244, 114, 182, 0.16);
+	--highlight-text-color: rgba(255, 255, 255, 0.87);
+
+	@include mat.theme((
+		color: (
+			primary: mat.$rose-palette,
+			tertiary: mat.$blue-palette,
+		),
+		typography: Roboto,
+		density: 0,
+	), $overrides: (
+		background: var(--surface-section),
+		surface: var(--surface-card),
+	));
+}

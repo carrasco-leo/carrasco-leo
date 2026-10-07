@@ -1,0 +1,47 @@
+{
+  "private": true,
+  "name": "default-angular-application",
+  "version": "0.1.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "concurrently -n pug,ng -c yellow,blue \"npm run pug:watch\" \"ng serve\"",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "pug:build": "pug-compiler",
+    "pug:watch": "pug-compiler --watch",
+    "prebuild": "npm run pug:build",
+    "prestart": "npm run pug:build"
+  },
+  "dependencies": {
+    "@angular/animations": "^22.2.1",
+    "@angular/cdk": "^22.2.1",
+    "@angular/common": "^22.2.1",
+    "@angular/compiler": "^22.2.1",
+    "@angular/core": "^22.2.1",
+    "@angular/forms": "^22.2.1",
+    "@angular/material": "^22.2.1",
+    "@angular/platform-browser": "^22.2.1",
+    "@angular/platform-browser-dynamic": "^22.2.1",
+    "@angular/router": "^22.2.1",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^22.2.2",
+    "@angular/cli": "^22.2.2",
+    "@angular/compiler-cli": "^22.2.1",
+    "@carrasco-leo/angular-pug-compiler": "github:carrasco-leo/angular-pug-compiler",
+    "@types/jasmine": "~5.1.0",
+    "concurrently": "^10.0.5",
+    "istanbul-lib-instrument": "^6.0.3",
+    "jasmine-core": "~5.4.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "typescript": "~6.0.3"
+  }
+}
