@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "default-angular-application",
+  "name": "carrasco-leo",
   "version": "0.1.0",
   "scripts": {
     "ng": "ng",
@@ -8,8 +8,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "pug:build": "pug-compiler",
-    "pug:watch": "pug-compiler --watch",
+    "pug:build": "pug-compiler --control-flow-plugins",
+    "pug:watch": "pug-compiler --watch --control-flow-plugins",
     "prebuild": "npm run pug:build",
     "prestart": "npm run pug:build"
   },
@@ -24,6 +24,7 @@
     "@angular/platform-browser": "^22.2.1",
     "@angular/platform-browser-dynamic": "^22.2.1",
     "@angular/router": "^22.2.1",
+    "@carrasco-leo/ng": "file:dist/ng",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
@@ -32,16 +33,19 @@
     "@angular/build": "^22.2.2",
     "@angular/cli": "^22.2.2",
     "@angular/compiler-cli": "^22.2.1",
-    "@carrasco-leo/angular-pug-compiler": "github:carrasco-leo/angular-pug-compiler",
+    "@carrasco-leo/angular-pug-compiler": "^0.2.0",
     "@types/jasmine": "~5.1.0",
     "concurrently": "^10.0.5",
     "istanbul-lib-instrument": "^6.0.3",
     "jasmine-core": "~5.4.0",
+    "jsdom": "^30.0.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~6.0.3"
+    "ng-packagr": "^22.2.0",
+    "typescript": "~6.0.3",
+    "vitest": "^5.0.0"
   }
 }

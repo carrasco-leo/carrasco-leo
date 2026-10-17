@@ -5,6 +5,7 @@
   "compilerOptions": {
     "outDir": "./dist/out-tsc",
     "paths": {
+      "@carrasco-leo/ng/*": ["./dist/ng/*"],
     },
     "strict": true,
     "noImplicitOverride": true,
@@ -25,5 +26,19 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  "references": [
+    {
+      "path": "./projects/theme/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/theme/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/ng/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/ng/tsconfig.spec.json"
+    }
+  ]
 }

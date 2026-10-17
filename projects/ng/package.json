@@ -1,0 +1,17 @@
+{
+  "name": "@carrasco-leo/ng",
+  "version": "0.0.1",
+  "exports": {
+    "./theme": {
+      "sass": "_theme.scss"
+    }
+  },
+  "peerDependencies": {
+    "@angular/common": "^22.2.0",
+    "@angular/core": "^22.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}

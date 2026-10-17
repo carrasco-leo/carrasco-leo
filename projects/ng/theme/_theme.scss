@@ -1,0 +1,40 @@
+//
+// _theme.scss — @carrasco-leo/ng/theme
+// ~/projects/ng/theme
+//
+
+@use '@angular/material' as mat;
+
+@mixin color($key, $color, $bg) {
+	& {
+		--color-#{$key}: #{$bg};
+		--color-#{$key}-bg: color-mix(in srgb, #{$bg}, transparent 84%);
+		--color-#{$key}-text: #{$color};
+		--color-#{$key}-border: #{$bg};
+		--color-#{$key}-ripple: #{rgba($bg, 0.1)};
+	}
+}
+
+@mixin color-primary($color, $bg) {
+	@include color(primary, $color, $bg);
+}
+@mixin theme() {
+	@include color(info, #ffffffdd, #3b82f6);
+	@include color(success, #ffffffdd, #10b981);
+	@include color(warn, #ffffffdd, #eab308);
+	@include color(error, #ffffffdd, #ef4444);
+}
+
+@mixin default-mat-theme($primary, $tertiary) {
+	@include mat.theme((
+		color: (
+			primary: $primary,
+			tertiary: $tertiary,
+		),
+		typography: Roboto,
+		density: 0,
+	), $overrides: (
+		background: var(--surface-section),
+		surface: var(--surface-card),
+	));
+}

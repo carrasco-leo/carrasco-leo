@@ -1,0 +1,160 @@
+//
+// _base.scss — @carrasco-leo/ng/theme
+// ~/projects/ng/theme
+//
+
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+@mixin base() {
+	*, *::before, *::after {
+		box-sizing: border-box;
+	}
+
+	html, body {
+		height: 100%;
+	}
+
+	body {
+		margin: 0;
+		color: var(--mat-sys-on-background);
+		font: var(--mat-sys-body-large);
+		background-color: var(--mat-sys-background);
+	}
+
+	main {
+		padding: var(--content-padding) var(--inline-spacing);
+
+		@media screen and (min-width: $lg) {
+			padding: var(--content-padding);
+		}
+	}
+
+	p {
+		margin: 0 0 1rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	a {
+		color: var(--color-primary);
+		text-decoration: none;
+
+		&[disabled] {
+			pointer-events: none;
+		}
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+		&.mat-mdc-button-base:hover {
+			text-decoration: none;
+		}
+	}
+
+	a .mat-icon {
+		width: 1em;
+		height: 1em;
+		font-size: 100%;
+		vertical-align: text-top;
+	}
+
+	.title-1 {
+		margin: 1rem 0 1.5rem;
+		font: var(--mat-sys-display-large);
+	}
+
+	.title-2 {
+		margin: 0.75rem 0 1rem;
+		font: var(--mat-sys-display-medium);
+	}
+
+	.title-3 {
+		margin: 0.5rem 0;
+		font: var(--mat-sys-display-small);
+	}
+
+	.title-4 {
+		margin: 0.5rem 0;
+		font: var(--mat-sys-headline-large);
+	}
+
+	.title-5 {
+		margin: 0.5rem 0;
+		font: var(--mat-sys-headline-medium);
+	}
+
+	.title-6 {
+		margin: 0.5rem 0;
+		font: var(--mat-sys-headline-small);
+	}
+
+	.form-field-row {
+		display: flex;
+		align-items: baseline;
+		gap: 0.5rem;
+
+		> * {
+			&:not(.mat-mdc-checkbox, .mat-mdc-slide-toggle, .mat-mdc-mdc-button-base, .flex-none) {
+				flex: 1%;
+			}
+		}
+	}
+
+	%mat-icon-fs {
+		width: 1em;
+		height: 1em;
+	}
+	@each $size in (text-xs, text-sm, text-base, text-lg, text-xl, text-2xl, text-3xl, text-4xl, text-5xl, text-6xl, text-7xl, text-8xl) {
+		.mat-icon.#{$size} {
+			@extend %mat-icon-fs;
+		}
+	}
+
+	.bullet {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 1.5em;
+		height: 1.5em;
+		line-height: 1.5;
+
+		&::after {
+			content: '';
+			width: 0.5em;
+			height: 0.5em;
+			border-radius: 100%;
+			background: var(--surface-card);
+			box-shadow: var(--mat-sys-level1);
+		}
+
+		@each $key in (primary, success, info, warn, error) {
+			&.mat-color-#{$key}::after {
+				background: var(--color-#{$key});
+			}
+		}
+	}
+
+	@for $i from 0 through 12 {
+		.flex-#{$i} { flex: #{$i} !important; }
+		.grid-auto-#{$i} { grid-template-columns: repeat(auto-fill, minmax(#{$i * 5rem}, 1fr)); }
+	}
+
+	.float-clear::after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+
+	.color-info { color: var(--color-info) !important; }
+	.color-success { color: var(--color-success) !important; }
+	.color-warn { color: var(--color-warn) !important; }
+	.color-error { color: var(--color-error) !important; }
+	.color-secondary { color: var(--text-color-secondary) !important; }
+	.color-primary { color: var(--color-primary) !important; }
+}

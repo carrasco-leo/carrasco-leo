@@ -7,6 +7,10 @@
 
 @use '@angular/material' as mat;
 
+@use '@carrasco-leo/ng/theme' as cl;
+
+@include cl.base();
+
 :root {
 	color-scheme: light dark;
 
@@ -25,15 +29,7 @@
 	--highlight-bg: rgba(244, 114, 182, 0.16);
 	--highlight-text-color: rgba(255, 255, 255, 0.87);
 
-	@include mat.theme((
-		color: (
-			primary: mat.$rose-palette,
-			tertiary: mat.$blue-palette,
-		),
-		typography: Roboto,
-		density: 0,
-	), $overrides: (
-		background: var(--surface-section),
-		surface: var(--surface-card),
-	));
-}
+	@include cl.default-mat-theme(mat.$rose-palette, mat.$blue-palette);
+	@include cl.theme();
+}	@include cl.color-primary(var(--text-color), #f472b6);
+
