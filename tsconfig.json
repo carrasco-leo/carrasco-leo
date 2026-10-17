@@ -29,12 +29,6 @@
   },
   "references": [
     {
-      "path": "./projects/theme/tsconfig.lib.json"
-    },
-    {
-      "path": "./projects/theme/tsconfig.spec.json"
-    },
-    {
       "path": "./projects/ng/tsconfig.lib.json"
     },
     {
