@@ -1,0 +1,91 @@
+//
+// message.component.scss — @carrasco-leo/ng/message
+// ~/projects/ng/message/src
+//
+
+@use 'sass:map';
+
+@use '@angular/material' as mat;
+
+@mixin color-old($color, $bg) {
+	& {
+		color: $color;
+		background: color-mix(in srgb, $bg, transparent 84%);
+		border-left-color: $bg;
+	}
+
+	.cl-message-close {
+		@include mat.icon-button-overrides((
+			icon-color: $color,
+			state-layer-color: $color,
+			ripple-color: rgba($color, 0.1),
+		));
+	}
+}
+
+@mixin color($key) {
+	& {
+		color: var(--color-#{$key});
+		background: var(--color-#{$key}-bg);
+		border-left-color: var(--color-#{$key}-border);
+	}
+
+	.cl-message-close {
+		@include mat.icon-button-overrides((
+			icon-color: var(--color-#{$key}),
+			state-layer-color: var(--color-#{$key}),
+			ripple-color: var(--color-#{$key}-ripple),
+		));
+	}
+}
+
+.cl-message {
+	position: relative;
+	display: flex;
+	gap: 0.75rem;
+	min-height: 4rem;
+	padding: 0.75rem;
+	background: var(--surface-card);
+	border-radius: 4px;
+	border-left: 6px solid;
+}
+
+.cl-message-no-icon {
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+}
+
+.cl-message-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-self: center;
+
+	.mat-icon {
+		width: 1em;
+		height: 1em;
+		font-size: 2.5rem;
+	}
+}
+
+.cl-message-content {
+	flex: auto;
+	display: flex;
+	align-items: center;
+}
+
+.cl-message-info {
+	@include color(info);
+}
+
+.cl-message-success {
+	@include color(success);
+}
+
+.cl-message-warn {
+	@include color(warn);
+}
+
+.cl-message-error {
+	@include color(error);
+}

@@ -1,0 +1,12 @@
+//-
+//- message.component.pug — @carrasco-leo/ng/message
+//- ~/projects/ng/message/src
+//-
+
+@if (!noIcon()) {
+	div.cl-message-icon
+		mat-icon {{ icon() }}
+}
+
+div.cl-message-content
+	ng-content

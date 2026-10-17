@@ -12,6 +12,7 @@ import { takeUntil, map, switchMap } from 'rxjs/operators';
 
 import { ClBaseController } from '@carrasco-leo/ng/core';
 import { ClNotificationService } from '@carrasco-leo/ng/notification';
+import { ClMessage } from '@carrasco-leo/ng/message';
 
 @Component({
 	standalone:          true,
@@ -25,6 +26,7 @@ import { ClNotificationService } from '@carrasco-leo/ng/notification';
 	},
 
 	imports: [
+		ClMessage,
 	],
 })
 export class HomepageController
