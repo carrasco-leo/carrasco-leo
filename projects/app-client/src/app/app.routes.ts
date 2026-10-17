@@ -10,5 +10,6 @@ import { AppSetup } from './app-setup';
 export const ROUTES: Routes = [
 	{ path: '', canActivate: [AppSetup], children: [
 		// put your routes here just after AppSetup guard
+		{ path: '**', children: [] },
 	] },
 ];

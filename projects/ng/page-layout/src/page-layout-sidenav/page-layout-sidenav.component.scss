@@ -1,0 +1,90 @@
+//
+// page-layout-sidenav.component.scss — @carrasco-leo/ng/page-layout
+// ~/projects/ng/page-layout/src/page-layout-sidenav
+//
+
+.cl-page-layout-sidenav {
+	z-index: 3;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: var(--page-layout-sidenav-width);
+	background-color: var(--page-layout-sidenav-bg);
+	border-right: 1px solid var(--surface-border);
+	box-shadow: var(--mat-sys-level1);
+	transform: translate(-100%);
+	transition: transform 100ms;
+
+	&.opened {
+		transform: none;
+		transition: transform 300ms;
+	}
+}
+
+.cl-page-layout-sidenav-header, .cl-page-layout-sidenav-footer {
+	display: block;
+	padding: 0.5rem 0;
+}
+
+.cl-page-layout-sidenav-header + .cl-page-layout-sidenav-groups {
+	border-top: 1px solid var(--surface-border);
+}
+
+.cl-page-layout-sidenav-groups + .cl-page-layout-sidenav-footer {
+	border-top: 1px solid var(--surface-border);
+}
+
+.cl-page-layout-sidenav-groups {
+	margin: 0.25rem 0;
+	padding: 0.25rem 0;
+}
+
+.cl-page-layout-sidenav-links {
+	display: none;
+
+	.cl-page-layout-sidenav-group.active & {
+		display: block;
+	}
+}
+
+.cl-page-layout-sidenav-category {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 3rem;
+	margin: 0;
+	padding: 0 1rem;
+	color: var(--text-color-secondary);
+	font: inherit;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	background: none;
+	border: none;
+	outline: none;
+	cursor: pointer;
+
+	.cl-page-layout-sidenav-group.active & span {
+		color: var(--color-primary);
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.cl-page-layout-sidenav {
+		flex-flow: row;
+		transform: none;
+		transition: transform 300ms;
+
+		&.opened {
+			transform: translate(-100%);
+			transition: transform 100ms;
+		}
+	}
+
+	.cl-page-layout-topbar ~ .cl-page-layout-sidenav {
+		z-index: 1;
+		top: var(--page-layout-topbar-height);
+	}
+}

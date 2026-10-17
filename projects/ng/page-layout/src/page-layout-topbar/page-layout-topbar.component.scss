@@ -1,0 +1,42 @@
+//
+// page-layout-topbar.component.scss — @carrasco-leo/ng/page-layout
+// ~/projects/ng/page-layout/src/page-layout-topbar
+//
+
+.cl-page-layout-topbar {
+	z-index: 2;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: var(--page-layout-topbar-height);
+	background-color: var(--page-layout-topbar-bg);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	box-shadow: var(--mat-sys-level5);
+}
+
+.cl-page-layout-topbar-inner {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	padding: 0 var(--content-padding);
+}
+
+button.cl-page-layout-topbar-sidenav-button {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 3.5rem;
+	height: 100%;
+	padding: 0;
+	color: inherit;
+	border: none;
+	background: none;
+	border-radius: 0;
+	cursor: pointer;
+
+	@media screen and (min-width: 992px) {
+		// display: none;
+	}
+}

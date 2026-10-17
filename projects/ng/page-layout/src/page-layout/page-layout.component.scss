@@ -1,0 +1,65 @@
+//
+// page-layout.component.scss — @carrasco-leo/ng/page-layout
+// ~/projects/ng/page-layout/src/page-layout
+//
+
+@use 'sass:color';
+
+:root {
+	--page-layout-topbar-height: 3.5rem;
+  --page-layout-topbar-bg: light-dark(white, #080c13);
+  --page-layout-toolbar-height: 3.5rem;
+  --page-layout-toolbar-bg: light-dark(white, #{color.adjust(#080c13, $lightness: 3%)});
+	--page-layout-sidenav-bg: var(--surface-card);
+	--page-layout-sidenav-cat-bg:  light-dark(var(--surface-section), #{color.adjust(#1f2937, $lightness: -5%)});
+	--page-layout-sidenav-width: 312px;
+}
+
+.cl-page-layout-backdrop {
+	z-index: 3;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(black, 0.32);
+	visibility: hidden;
+
+	@media screen and (max-width: 991px) {
+		&.cl-page-layout-backdrop-visible {
+			visibility: visible;
+		}
+	}
+}
+
+.cl-page-layout-toolbar {
+	display: flex;
+	align-items: center;
+	height: var(--page-layout-toolbar-height);
+	padding: 0 var(--content-padding);
+	background-color: var(--page-layout-toolbar-bg);
+}
+
+.cl-page-layout-content {
+	display: block;
+	transition: padding-left 100ms;
+
+	.cl-page-layout-topbar ~ & {
+		padding-top: var(--page-layout-topbar-height);
+	}
+
+	@media screen and (min-width: 992px) {
+		padding-left: var(--page-layout-sidenav-width);
+		transition: padding-left 300ms;
+
+		.cl-page-layout-sidenav.opened ~ & {
+			padding-left: 0;
+			transition: padding-left 100ms;
+		}
+	}
+}
+
+.cl-page-layout-body {
+	position: relative;
+}
+

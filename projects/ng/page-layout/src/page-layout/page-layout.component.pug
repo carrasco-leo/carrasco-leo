@@ -1,0 +1,15 @@
+//-
+//- page-layout.component.pug — @carrasco-leo/ng/page-layout
+//- ~/projects/ng/page-layout/src/page-layout
+//-
+
+div.cl-page-layout-backdrop(
+	[class.cl-page-layout-backdrop-visible]="isSidenavOpened()",
+	(click)="closeSidenav()",
+	)
+
+ng-content(select="cl-page-layout-topbar, [cl-page-layout-topbar]")
+ng-content(select="cl-page-layout-sidenav, [cl-page-layout-sidenav]")
+
+div.cl-page-layout-content
+	ng-content(select="cl-page-layout-body, [cl-page-layout-body]")

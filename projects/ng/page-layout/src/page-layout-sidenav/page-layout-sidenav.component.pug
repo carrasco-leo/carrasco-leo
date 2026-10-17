@@ -1,0 +1,27 @@
+//-
+//- page-layout-sidenav.component.pug — @carrasco-leo/ng/page-layout
+//- ~/projects/ng/page-layout/src/page-layout-sidenav
+//-
+
+ng-content(select="cl-page-layout-sidenav-header, [cl-page-layout-sidenav-header]")
+
+div.cl-page-layout-sidenav-groups
+	@for (cat of categories; track cat.id) {
+		div.cl-page-layout-sidenav-group(
+			[class.active]="currentCategory() === cat",
+			)
+			button.cl-page-layout-sidenav-category(
+				mat-ripple,
+				[class.disabled]="cat.disabled()",
+				(click)="toggleActiveCategory(cat.id())",
+				)
+				span {{ cat.label() }}
+				mat-icon {{ currentCategory() === cat ? 'expand_less' : 'expand_more' }}
+
+			div.cl-page-layout-sidenav-links
+				@for (template of templates[cat.id()]; track template) {
+					ng-container(*ngTemplateOutlet="template.templateRef")
+				}
+	}
+
+ng-content(select="cl-page-layout-sidenav-footer, [cl-page-layout-sidenav-footer]")

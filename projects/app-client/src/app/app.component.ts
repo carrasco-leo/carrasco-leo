@@ -4,7 +4,12 @@
 //
 
 import { Component, ViewEncapsulation, inject } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import type { NavigationError } from '@angular/router';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
+
+import { ClBaseApp } from '@carrasco-leo/ng/core';
+import { ClPageLayoutModule } from '@carrasco-leo/ng/page-layout';
 
 @Component({
 	selector:            'app-root',
@@ -15,8 +20,20 @@ import { RouterOutlet } from '@angular/router';
 
 	imports: [
 		RouterOutlet,
+		RouterLink,
+		RouterLinkActive,
+		MatIconModule,
+		ClPageLayoutModule,
 	],
 })
 export class AppComponent
+	extends ClBaseApp
 {
+	override setAppReady(): void {
+		super.setAppReady();
+	}
+
+	protected override _onNavigationError(event: NavigationError): void {
+		super._onNavigationError(event);
+	}
 }

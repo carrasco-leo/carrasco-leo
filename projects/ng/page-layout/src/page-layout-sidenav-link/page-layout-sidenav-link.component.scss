@@ -1,0 +1,37 @@
+//
+// page-layout-sidenav-link.component.scss — @carrasco-leo/ng/page-layout
+// ~/projects/ng/page-layout/src/page-layout-sidenav-link
+//
+
+.cl-page-layout-sidenav-link, a.cl-page-layout-sidenav-link {
+	display: block;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	color: inherit;
+	font: inherit;
+	text-decoration: none;
+	background: none;
+	border: none;
+	cursor: pointer;
+
+	.mat-icon {
+		font-size: 1.5rem;
+	}
+
+	&.active {
+		color: var(--highlight-text-color);
+		background-color: var(--highlight-bg);
+	}
+
+	&:hover .cl-page-layout-sidenav-link-inner {
+		background: var(--surface-hover);
+	}
+}
+
+.cl-page-layout-sidenav-link-inner {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	padding: 0.75rem var(--content-padding);
+}

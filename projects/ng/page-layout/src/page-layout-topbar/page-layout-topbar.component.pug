@@ -1,0 +1,13 @@
+//-
+//- page-layout-topbar.component.pug — @carrasco-leo/ng/page-layout
+//- ~/projects/ng/page-layout/src/page-layout-topbar
+//-
+
+div.cl-page-layout-topbar-inner
+	button.cl-page-layout-topbar-sidenav-button(
+		mat-ripple,
+		(click)="toggleSidenav()",
+		)
+		mat-icon menu
+
+	ng-content
