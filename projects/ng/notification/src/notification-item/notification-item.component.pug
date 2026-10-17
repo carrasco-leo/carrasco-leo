@@ -1,0 +1,17 @@
+//-
+//- notification-item.component.pug — @carrasco-leo/ng/notification
+//- ~/projects/ng/notification/src/notification-item
+//-
+
+div.cl-notification-icon
+	mat-icon {{ icon }}
+
+div.cl-notification-content(
+	[class.cl-notification-no-title]="!options.title",
+	)
+	div.cl-notification-title {{ options.title }}
+	div.cl-notification-message {{ options.message }}
+
+div.cl-notification-close
+	button(mat-icon-button, (click)="exit()")
+		mat-icon close

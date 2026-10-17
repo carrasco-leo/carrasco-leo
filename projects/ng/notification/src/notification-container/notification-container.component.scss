@@ -1,0 +1,21 @@
+//
+// notification-container.component.scss — @carrasco-leo/ng/notification
+// ~/projects/ng/notification/src/notification-container
+//
+
+.cl-notification-overlay-panel {
+	z-index: 1001;
+}
+
+.cl-notification-container {
+	position: fixed;
+	top: 0;
+	right: 0;
+	display: flex;
+	max-width: 480px;
+	width: 100%;
+	flex-flow: column;
+	gap: 0.5rem;
+	padding: 0.5rem;
+	pointer-events: none;
+}

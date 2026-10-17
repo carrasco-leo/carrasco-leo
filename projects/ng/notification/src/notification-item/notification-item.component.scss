@@ -1,0 +1,85 @@
+//
+// notification-item.component.scss — @carrasco-leo/ng/notification
+// ~/projects/ng/notification/src/notification-item
+//
+
+@use 'sass:map';
+
+@use '@angular/material' as mat;
+
+@mixin color($key) {
+	& {
+		color: var(--color-#{$key});
+		background: var(--color-#{$key}-bg);
+		border-left-color: var(--color-#{$key}-border);
+	}
+
+	.cl-notification-close {
+		@include mat.icon-button-overrides((
+			icon-color: var(--color-#{$key}),
+			state-layer-color: var(--color-#{$key}),
+			ripple-color: var(--color-#{$key}-ripple),
+		));
+	}
+}
+
+.cl-notification-item {
+	position: relative;
+	display: flex;
+	gap: 0.75rem;
+	width: 460px;
+	max-width: 100%;
+	padding: 0.75rem;
+	backdrop-filter: blur(10px);
+	background: var(--surface-card);
+	border-radius: 4px;
+	border-left: 6px solid;
+	box-shadow: var(--mat-sys-level5);
+	pointer-events: all;
+}
+
+.cl-notification-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-self: center;
+
+	.mat-icon {
+		width: 1em;
+		height: 1em;
+		font-size: 2.5rem;
+	}
+}
+
+.cl-notification-content {
+	flex: auto;
+}
+
+.cl-notification-no-title {
+	display: flex;
+	align-items: center;
+}
+
+.cl-notification-title {
+	font-weight: 500;
+}
+
+.cl-notification-primary {
+	@include color(primary);
+}
+
+.cl-notification-info {
+	@include color(info);
+}
+
+.cl-notification-success {
+	@include color(success);
+}
+
+.cl-notification-warn {
+	@include color(warn);
+}
+
+.cl-notification-error {
+	@include color(error);
+}
