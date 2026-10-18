@@ -25,6 +25,7 @@
     "@angular/platform-browser-dynamic": "^22.2.1",
     "@angular/router": "^22.2.1",
     "@carrasco-leo/ng": "file:dist/ng",
+    "primeflex": "^4.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
