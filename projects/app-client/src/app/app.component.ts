@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { ClBaseApp } from '@carrasco-leo/ng/core';
 import { ClPageLayoutModule } from '@carrasco-leo/ng/page-layout';
+import { ClNotificationService } from '@carrasco-leo/ng/notification';
 
 @Component({
 	selector:            'app-root',
@@ -29,11 +30,15 @@ import { ClPageLayoutModule } from '@carrasco-leo/ng/page-layout';
 export class AppComponent
 	extends ClBaseApp
 {
+	protected $notification: ClNotificationService = inject(ClNotificationService);
+
 	override setAppReady(): void {
 		super.setAppReady();
 	}
 
 	protected override _onNavigationError(event: NavigationError): void {
+		this.$notification.error(event.error.message);
+
 		super._onNavigationError(event);
 	}
 }

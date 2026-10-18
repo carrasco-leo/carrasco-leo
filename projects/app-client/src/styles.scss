@@ -31,5 +31,5 @@
 
 	@include cl.default-mat-theme(mat.$rose-palette, mat.$blue-palette);
 	@include cl.theme();
-}	@include cl.color-primary(var(--text-color), #f472b6);
-
+	@include cl.color-primary(var(--text-color), #f472b6);
+}
