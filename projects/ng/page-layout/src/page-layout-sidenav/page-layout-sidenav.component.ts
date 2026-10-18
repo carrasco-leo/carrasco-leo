@@ -38,7 +38,6 @@ export class ClPageLayoutSidenav
 	readonly categories = this.$pageLayout.categories.asReadonly();
 
 	get templates() { return this.$pageLayout.templates; }
-	get id() { return this.$pageLayout.id; }
 
 	toggleActiveCategory(id: string): void {
 		for (const cat of this.$pageLayout.categories()) {
