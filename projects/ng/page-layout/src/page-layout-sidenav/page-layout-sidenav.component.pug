@@ -6,7 +6,7 @@
 ng-content(select="cl-page-layout-sidenav-header, [cl-page-layout-sidenav-header]")
 
 div.cl-page-layout-sidenav-groups
-	@for (cat of categories; track cat.id) {
+	@for (cat of categories(); track cat.id) {
 		div.cl-page-layout-sidenav-group(
 			[class.active]="currentCategory() === cat",
 			)

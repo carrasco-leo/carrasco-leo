@@ -6,6 +6,8 @@
 import { Component, inject } from '@angular/core';
 import type { OnInit } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
+import {RouterLink, RouterLinkActive } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
 
 import type { Observable } from 'rxjs';
 import { takeUntil, map, switchMap } from 'rxjs/operators';
@@ -13,6 +15,7 @@ import { takeUntil, map, switchMap } from 'rxjs/operators';
 import { ClBaseController } from '@carrasco-leo/ng/core';
 import { ClNotificationService } from '@carrasco-leo/ng/notification';
 import { ClMessage } from '@carrasco-leo/ng/message';
+import { ClPageLayoutModule } from '@carrasco-leo/ng/page-layout';
 
 @Component({
 	standalone:          true,
@@ -26,7 +29,11 @@ import { ClMessage } from '@carrasco-leo/ng/message';
 	},
 
 	imports: [
+		RouterLink,
+		RouterLinkActive,
+		MatIconModule,
 		ClMessage,
+		ClPageLayoutModule,
 	],
 })
 export class HomepageController

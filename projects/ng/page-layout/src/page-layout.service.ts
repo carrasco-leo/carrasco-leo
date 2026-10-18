@@ -5,15 +5,15 @@
 
 import { Service, signal } from '@angular/core';
 
-import type { ClPageLayoutCategory, ClPageLayoutTemplate } from './directives';
+import { ClPageLayoutCategory, ClPageLayoutTemplate } from './directives';
 
 @Service()
 export class ClPageLayoutService
 {
 	readonly sidenavOpened = signal<boolean>(false);
 	readonly currentCategory = signal<ClPageLayoutCategory|null>(null);
+	readonly categories = signal<ClPageLayoutCategory[]>([]);
 
-	categories: ClPageLayoutCategory[] = [];
 	templates: Record<string, ClPageLayoutTemplate[]> = {};
 
 	toggleSidenav(toggled: boolean = !this.sidenavOpened()): void {
@@ -25,11 +25,17 @@ export class ClPageLayoutService
 			this.currentCategory.set(cat);
 		}
 
-		this._add(this.categories, cat);
+		this.categories.update((values) => {
+			this._add(values, cat);
+			return [...values];
+		})
 	}
 
 	removeCategory(cat: ClPageLayoutCategory): void {
-		this._remove(this.categories, cat);
+		this.categories.update((values) => {
+			this._remove(values, cat);
+			return [...values];
+		});
 	}
 
 	addTemplate(template: ClPageLayoutTemplate): void {

@@ -1,6 +1,6 @@
 {
   "name": "@carrasco-leo/ng",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "exports": {
     "./theme": {
       "sass": "_theme.scss"

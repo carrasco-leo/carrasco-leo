@@ -35,12 +35,13 @@ export class ClPageLayoutSidenav
 
 	readonly currentCategory = this.$pageLayout.currentCategory.asReadonly();
 	readonly isOpened = this.$pageLayout.sidenavOpened.asReadonly();
+	readonly categories = this.$pageLayout.categories.asReadonly();
 
-	get categories() { return this.$pageLayout.categories; }
 	get templates() { return this.$pageLayout.templates; }
+	get id() { return this.$pageLayout.id; }
 
 	toggleActiveCategory(id: string): void {
-		for (const cat of this.$pageLayout.categories) {
+		for (const cat of this.$pageLayout.categories()) {
 			if (cat.id() === id) {
 				if (this.currentCategory() === cat) {
 					this.$pageLayout.currentCategory.set(null);
